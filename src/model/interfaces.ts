@@ -28,7 +28,7 @@ export interface Capacity {
 export interface Building {
   name: string;
   cost: ResourceAmount[];
-  capacity: Capacity[];
+  capacity: Capacity;
   benefit: ResourceAmount[];
   currentPopulation: Human[];
 }

@@ -95,25 +95,23 @@ const Game: PageInterface = {
       for (let i = 0; i < data.length; i++){
         new NewBuilding(data[i].name, data[i].benefit, data[i].cost, data[i].capacity).createBuild();
       }
+      canBuyBuildings();
     });
-    canBuyBuildings();
+
     setInterval(canBuyBuildings, 50000)
     function canBuyBuildings(){
-      game.getAvalableBuildings([]).then((data) => {debugger
-        console.log(data)
-        let allBuildings = document.getElementsByClassName('buttonBuildings')
+      console.log("UPDATE")
+      game.getAvalableBuildings([]).then((data) => {
+        console.log(data);
+        let allBuildings = document.getElementsByClassName('buttonBuildings');
+        for (let i = 0; i < allBuildings.length; i++) {
+          allBuildings[i].setAttribute('disabled', 'disabled');
+        };
         for (let i = 0; i < data.length; i++){
           let name = data[i].name;
-          for (let k = 0; k < allBuildings.length; i++){
-            let attr = allBuildings[i].getAttribute('data');
-            if (name === attr){
-              allBuildings[i].removeAttribute('disabled');
-              allBuildings[i].classList.add('activeButton');
-              break
-            }else {
-              allBuildings[i].setAttribute('disabled', 'disabled');
-            }
-          }
+          let button = document.getElementById(`${name}`);
+          button?.removeAttribute('disabled');
+          button?.classList.add('activeButton');
         }
       });
     };
@@ -122,8 +120,9 @@ const Game: PageInterface = {
       let eventTarget = e.target as HTMLElement;
       let el = eventTarget.closest('button');
       if (el?.hasAttribute('disabled') === false){
-        let name = el.getAttribute('name');
-
+        let name = el.getAttribute('data') as string;
+          game.buyNewBuilding([], name);
+          getState();
       }
     })
   },

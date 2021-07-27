@@ -54,7 +54,7 @@ function getAvalableBuildings(url: string,params: UrlParameter[]): Promise<Build
 //   return request(url, params, {}, 'GET');
 // }
 function buyBuilding(url: string, params: UrlParameter[]): Promise<void> {
-  return request(url, params, [], 'POST');
+  return request(url, params, [], 'PUT');
 }
 function update(url: string, params: UrlParameter[], body: Body): Promise<{ id: number, name: string, color: string }> {
   return request(url, params, body, 'PUT');

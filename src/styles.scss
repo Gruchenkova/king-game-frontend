@@ -1,0 +1,53 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: darkslategrey;
+  color: white;
+  text-transform: uppercase;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+.imgGold {
+  width: 150px;
+  height: 150px;
+  background-image: url(./assets/img/dollar.png);
+}
+#resources {
+  width: auto;
+  display: flex;
+  position: absolute;
+  top: 5%;
+  right: 0;
+  span {
+    font-size: 15px;
+  }
+}
+#population {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
+#buildings {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  p {
+    font-size: 10px;
+    margin: 0;
+  }
+}
+.buildingBlock {
+  margin-left: 5px;
+}
+.activeButton {
+  cursor: pointer;
+}
+

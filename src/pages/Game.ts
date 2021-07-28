@@ -26,11 +26,11 @@ const Game: PageInterface = {
                         <span id='food'></span>
                       </div>
                       <div>
-                        <img class='icon' id='power' alt='power'>
+                        <img class='icon' id='strong' alt='power'>
                         <span id='power'></span>
                       </div>
                       <div>
-                        <img class='icon' id='science' alt='science'>
+                        <img class='icon' id='brain' alt='science'>
                         <span id='science'></span>
                       </div>
                     </div>
@@ -58,9 +58,9 @@ const Game: PageInterface = {
     dollarImg.src = dollar;
     let carrotImg = document.getElementById('carrot') as HTMLImageElement;
     carrotImg.src = carrot
-    let powerImg = document.getElementById('power') as HTMLImageElement;
+    let powerImg = document.getElementById('strong') as HTMLImageElement;
     powerImg.src = power;
-    let scienceImg = document.getElementById('science') as HTMLImageElement;
+    let scienceImg = document.getElementById('brain') as HTMLImageElement;
     scienceImg.src = brain;
     let soldierImg = document.getElementById('soldierImg') as HTMLImageElement;
     soldierImg.src = soldier;

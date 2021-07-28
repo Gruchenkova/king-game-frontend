@@ -10,7 +10,7 @@ async function request(url: string, params: UrlParameter[], body: Body = {}, met
   const options: Options = {
     method,
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'text/html',
     },
   };
   if (params) {
@@ -54,7 +54,7 @@ function getAvalableBuildings(url: string,params: UrlParameter[]): Promise<Build
 //   return request(url, params, {}, 'GET');
 // }
 function buyBuilding(url: string, params: UrlParameter[]): Promise<void> {
-  return request(url, params, [], 'PUT');
+  return request(url, params, [], 'POST');
 }
 function update(url: string, params: UrlParameter[], body: Body): Promise<{ id: number, name: string, color: string }> {
   return request(url, params, body, 'PUT');
